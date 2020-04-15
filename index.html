@@ -12,6 +12,41 @@
 </head>
 
 <body>
+<div id="viz"></div>
+
+<script>
+
+  var nodes = [
+    {"id": "alpha"},
+    {"id": "beta"},
+    {"id": "gamma"}
+  ];
+
+  var edges = [
+    {"strength": 2, "source": 0, "target": 2},
+    {"strength": 1, "source": 1, "target": 2},
+    {"strength": 1, "source": 2, "target": 0},
+    {"strength": 3, "source": 2, "target": 1}
+  ];
+
+  var visualization = d3plus.viz()
+    .container("#viz")
+    .edges({
+      "strength": "strength",
+      "value": edges
+    })
+    .focus({
+      "tooltip": false,
+      "value": "gamma"
+    })
+    .id("id")
+    .nodes(nodes)
+    .size(100)
+    .type("sankey")
+    .draw();
+
+</script>
+
 <div id="viz1"></div>
 <div id="viz2"></div>
 </body>
