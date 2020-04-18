@@ -60,3 +60,40 @@ var data2 = [
 make_viz2(data2)
 
 
+var edges = [
+    {"strength": 1, "source": 4, "target": 5},
+    {"strength": 0, "source": 3, "target": 4},
+    {"strength": 0, "source": 4, "target": 3},
+    {"strength": 4, "source": 6, "target": 4},
+    {"strength": 1, "source": 1, "target": 4},
+    {"strength": 3, "source": 4, "target": 6},
+    {"strength": 1, "source": 5, "target": 4},
+    {"strength": 1, "source": 4, "target": 1}
+  ];
+
+var nodes = [
+    {"id": "Oceania"},
+    {"id": "North America"},
+    {"id": "Antarctica"},
+    {"id": "South America"},
+    {"id": "Europe"},
+    {"id": "Africa"},            
+    {"id": "Asia"}
+  ];
+
+
+  var visualization = d3plus.viz()
+    .container("#viz")
+    .edges({
+      "strength": "strength",
+      "value": edges
+    })
+    .focus({
+      "tooltip": true,
+      "value": "Europe"
+    })
+    .id("id")
+    .nodes(nodes)
+    .size(100)
+    .type("sankey")
+    .draw();
