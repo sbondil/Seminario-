@@ -8,17 +8,15 @@ h1, h2 {
   margin-right: auto;
   margin-left: auto;
   width: 100%;
-
 }
 
 body {
   padding-top: 10px;
 }
 [class*="col-"], footer {
-  background-color: rgb(5, 1, 24);
-  border: 2px solid black;
-  border-radius: 6px;
-  line-height: 40px;
+  background-color: rgb(223, 221, 233);
+  border: 0px solid black;
+  border-radius: 1px;
   text-align: center;
   height: 800px;
 }
