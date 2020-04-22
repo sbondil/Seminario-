@@ -1,33 +1,6 @@
 // Import stylesheets
 import './style.css';
 
-d3.tsv("https://d3plus.org/assets/posts/getting_started_1/data/state_crime.tsv", function(error, state_crime) {
-  if (error) return console.error(error);
-  
-  // Coerce data values to be numeric
-  state_crime.forEach(function(d) {
-    d3.keys(d).forEach(function(k){
-      if(k != "State"){
-        d[k] = +d[k]
-      }
-    })
-  });
-  console.log(state_crime);
-  make_viz(state_crime);
-});
-
-function make_viz(data){
-  var visualization = d3plus.viz()
-      .container("#viz1")
-      .data(data)
-      .type("tree_map")
-      .id("State")
-      .size("Assault")
-      .time("Year")
-      .draw()
-}
-
-
 
 // Sankey Graph
 var edges = [
